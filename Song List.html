@@ -109,6 +109,41 @@
       color: var(--muted);
     }
 
+    .playlist-feature {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--rule-strong);
+    }
+
+    .playlist-feature h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .playlist-link {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 9px 13px;
+      border: 1px solid var(--ink);
+      border-radius: 2px;
+      background: var(--ink);
+      color: var(--paper);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .playlist-link:hover { background: var(--accent); border-color: var(--accent); }
+    .playlist-link svg { width: 14px; height: 14px; }
+
     .controls {
       display: grid;
       grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
@@ -329,6 +364,8 @@
       h1 { font-size: clamp(2.7rem, 14vw, 4.5rem); }
       .count-block { text-align: left; }
       .count-block strong { display: inline; margin-right: 6px; }
+      .playlist-feature { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .playlist-link { width: 100%; justify-content: center; }
       .controls { grid-template-columns: 1fr; }
       .filters { justify-content: flex-start; }
       .filter { padding-inline: 11px; font-size: .89rem; }
@@ -382,6 +419,14 @@
         <span>songs cataloged</span>
       </div>
     </header>
+
+    <section class="playlist-feature" aria-labelledby="spotifyPlaylistTitle">
+      <h2 id="spotifyPlaylistTitle">Everything on Spotify</h2>
+      <a class="playlist-link" href="https://open.spotify.com/playlist/4kFZFnYOPitIB9BWGF38AJ" target="_blank" rel="noopener noreferrer">
+        Open playlist
+        <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 11 11 5M6 5h5v5"></path></svg>
+      </a>
+    </section>
 
     <section class="controls" aria-label="Catalog controls">
       <div class="search-wrap">
